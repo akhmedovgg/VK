@@ -46,7 +46,7 @@
 
 --->
 
-# Alternative [VK](https://vk.com) client for the [iOS](https://www.apple.com/ios) platform
+<h1 align="center">Alternative <a href="https://vk.com">VK</a> client for the <a href="https://www.apple.com/ios">iOS</a> platform</h1>
 
 ## On a note
 

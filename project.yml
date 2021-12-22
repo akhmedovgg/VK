@@ -1,0 +1,18 @@
+name: VK
+options:
+  bundleIdPrefix: ru.cocoexe
+  generateEmptyDirectories: true
+targets:
+  VK iOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "10.0"
+    sources: [VK iOS]
+    info:
+        path: VK iOS/Resources/Info.plist
+        properties:
+            CFBundleName: VK
+            CFBundleIdentifier: ru.cocoexe
+            UILaunchStoryboardName: LaunchScreen
+            UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+            

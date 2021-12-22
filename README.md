@@ -1,7 +1,5 @@
 <p align="center">
-    <div style="padding: 32px;">
-        <img src="https://user-images.githubusercontent.com/63432275/147153580-e44b96e1-7ed4-4ea4-a84c-c563f8136fdc.png" width="250"/>
-    </div>
+    <img src="https://user-images.githubusercontent.com/63432275/147153580-e44b96e1-7ed4-4ea4-a84c-c563f8136fdc.png" width="250"/>
 </p>
 
 <!---

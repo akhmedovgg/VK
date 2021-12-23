@@ -9,7 +9,6 @@ target 'VK iOS' do
 	use_frameworks!
 	
 	# Pods for VK iOS
-	pod 'SwiftLint'
 	pod 'SwiftyVK'
 	pod 'SnapKit', '~> 5.0.0'
 end

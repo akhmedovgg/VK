@@ -12,7 +12,9 @@ targets:
         path: VK iOS/Resources/Info.plist
         properties:
             CFBundleName: VK
-            CFBundleIdentifier: ru.cocoexe
+            CFBundleIdentifier: ru.cocoexe.VKiOS
             UILaunchStoryboardName: LaunchScreen
             UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+            UIAppFonts: ["VK_Sans_Display_Medium"]
+            
             

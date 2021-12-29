@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "3_circle_fill_bronze_20.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "original"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "cake_circle_fill_raspberry_pink_20.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "original"
+  }
+}

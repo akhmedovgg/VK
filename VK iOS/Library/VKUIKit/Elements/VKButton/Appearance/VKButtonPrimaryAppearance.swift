@@ -14,6 +14,8 @@ public class VKButtonPrimaryAppearance: VKButtonAppearance {
 	public var normalStateBorderColor: UIColor?
 	public var normalStateAlphaValue: CGFloat = 1
 	public var normalStateBorderWidth: CGFloat = 0
-	
+    
+    public var normalStateCornerRadius: CGFloat = 10
+    
 	public var highlightedStateAlphaValue: CGFloat = 0.4
 }

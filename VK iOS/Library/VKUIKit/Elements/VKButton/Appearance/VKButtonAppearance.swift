@@ -14,5 +14,8 @@ public protocol VKButtonAppearance {
 	var normalStateBorderColor: UIColor? { get }
 	var normalStateAlphaValue: CGFloat { get }
 	var normalStateBorderWidth: CGFloat { get }
+    
+    var normalStateCornerRadius: CGFloat { get }
+    
 	var highlightedStateAlphaValue: CGFloat { get }
 }

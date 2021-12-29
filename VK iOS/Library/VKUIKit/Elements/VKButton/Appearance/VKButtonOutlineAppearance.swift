@@ -14,6 +14,8 @@ public class VKButtonOutlineAppearance: VKButtonAppearance {
 	public var normalStateBorderColor: UIColor? = VKPalette.lightButtonOutlineBorder
 	public var normalStateAlphaValue: CGFloat = 1
 	public var normalStateBorderWidth: CGFloat = 2
-	
+    
+    public var normalStateCornerRadius: CGFloat = 10
+    
 	public var highlightedStateAlphaValue: CGFloat = 0.4
 }

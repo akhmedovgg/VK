@@ -20,7 +20,6 @@ class ViewController: UIViewController {
 	let button: VKButton = {
 		let button = VKButton(frame: .zero, appearance: VKButtonPrimaryAppearance())
 		button.setTitle("Button", for: .normal)
-		button.layer.cornerRadius = 10
 		button.translatesAutoresizingMaskIntoConstraints = false
 		return button
 	}()

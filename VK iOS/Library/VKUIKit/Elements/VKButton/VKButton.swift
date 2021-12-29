@@ -75,5 +75,6 @@ public class VKButton: UIButton {
 			layer.borderWidth = appearance.normalStateBorderWidth
 			layer.borderColor = normalStateBorderColor.cgColor
 		}
+        layer.cornerRadius = appearance.normalStateCornerRadius
 	}
 }

@@ -10,5 +10,4 @@ target 'VK iOS' do
 	
 	# Pods for VK iOS
 	pod 'SwiftyVK'
-	pod 'SnapKit', '~> 5.0.0'
 end

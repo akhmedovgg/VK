@@ -10,7 +10,7 @@ analyzer_rules:
 force_cast: warning
 force_try:
     severity: warning
-line_length: 160
+line_length: 172
 type_body_length:
     - 300
     - 400

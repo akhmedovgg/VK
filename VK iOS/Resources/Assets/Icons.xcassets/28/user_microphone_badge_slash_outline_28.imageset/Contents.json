@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "user_microphone_badge_slash_outline_28.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "play_circle_fill_gray_16.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

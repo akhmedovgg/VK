@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "reorder_ios_24.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

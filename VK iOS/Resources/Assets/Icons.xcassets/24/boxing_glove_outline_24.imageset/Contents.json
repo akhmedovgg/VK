@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "boxing_glove_outline_24.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

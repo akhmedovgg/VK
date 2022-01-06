@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "paint_roller_outline_24.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

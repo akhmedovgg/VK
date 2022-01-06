@@ -10,7 +10,7 @@ import UIKit
 class VKExperimentalViewController: UIViewController {
     let primaryButton: VKButton = {
         let button = VKButton(appearance: VKButtonAppearancePrimary(), size: VKButtonSizeMediumWithoutIcon())
-        button.setLeftSideIcon(UIImage(named: "add/white")!)
+        button.setLeftSideIcon(UIImage(named: "add_12")!.withRenderingMode(.alwaysTemplate))
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel.text = "Add Friend"
         button.titleLabel.textAlignment = .center
@@ -23,8 +23,6 @@ class VKExperimentalViewController: UIViewController {
         primaryButton.addTarget(self, action: #selector(didTap), for: .touchUpInside)
 
         view.addSubview(primaryButton)
-        
-//        UIAlertController(title: <#T##String?#>, message: <#T##String?#>, axis: .)
     }
     
     override func viewDidLayoutSubviews() {
@@ -39,21 +37,18 @@ class VKExperimentalViewController: UIViewController {
     }
     
     @objc func didTap(_ sender: UIControl) {
-        let actions = [
-            VKAlertAction(style: .cancel, title: "Отмена", completionHandler: {
-                print("no")
-            }),
-            VKAlertAction(style: .destructive, title: "Удалить", completionHandler: {
-                print("yes")
-            })
+        let b1 = VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary())
+        b1.titleLabel.text = "Button 1"
+        
+        let actionButtons = [
+            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary())
         ]
         
-        let controller = VKAlertViewController(
-            title: "Удаление документа",
-            message: "Вы уверены, что хотите удалить этот документ?",
-            axis: .horizontal,
-            actions: actions)
+        let cancelButton = VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary())
+        cancelButton.titleLabel.text = "Cancel"
         
-        present(controller, animated: true)
+        let vc = VKActionSheetViewController(actionButtons: actionButtons, cancelButton: cancelButton)
+        
+        present(vc, animated: true)
     }
 }

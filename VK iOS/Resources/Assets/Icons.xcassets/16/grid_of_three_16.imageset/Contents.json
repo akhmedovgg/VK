@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "grid_of_three_16.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

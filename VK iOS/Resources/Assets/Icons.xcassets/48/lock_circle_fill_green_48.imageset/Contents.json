@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "lock_circle_fill_green_48.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

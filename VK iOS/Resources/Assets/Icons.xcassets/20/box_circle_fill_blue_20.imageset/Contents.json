@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "box_circle_fill_blue_20.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

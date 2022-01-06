@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "lightbulb_outline_36.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftyVK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

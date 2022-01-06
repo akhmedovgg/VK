@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "arrow_right_outline_48.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

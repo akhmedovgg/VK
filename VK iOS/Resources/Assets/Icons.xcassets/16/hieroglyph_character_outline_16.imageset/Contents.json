@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "hieroglyph_character_outline_16.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

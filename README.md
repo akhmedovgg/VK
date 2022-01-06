@@ -82,7 +82,7 @@
 To generate Xcode project (`.xcodeproj`) file you must install [XcodeGen](https://github.com/yonaskolb/XcodeGen) and then run the following command in terminal
 
 ```bash
-$ xcodegen
+$ xcodegen generate -s project.json
 ```
 
 ## **FAQ**

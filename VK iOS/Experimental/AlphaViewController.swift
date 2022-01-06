@@ -9,12 +9,9 @@ import Foundation
 import UIKit
 
 class AlphaViewController: UIViewController {
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var containerButton: UIButton!
+    @IBOutlet weak var plusIcon: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        containerView.backgroundColor = VKPalette.azure300
-        containerView.layer.cornerRadius = 10
     }
 }

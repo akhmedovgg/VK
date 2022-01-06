@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "magnifier_plus_28.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -53,7 +53,6 @@
 <p align="center">
 😊 This is not the official <a href="https://apps.apple.com/us/app/vk-social-network/id564177498">VK</a> source code 😊<br />
 🍏 One application for iOS and iPadOS 🍏<br />
-🤘 Fully written in Swift and doesn't contain any Objective-C code 🤘<br />
 🎮 Very simple interface, made with care about those who will use it 🎮<br />
 ⛑ Fully strong typed that you can not shoot yourself in the leg ⛑<br />
 🏆 High code quality with lot of unit tests, linter integration and CI 🏆<br />

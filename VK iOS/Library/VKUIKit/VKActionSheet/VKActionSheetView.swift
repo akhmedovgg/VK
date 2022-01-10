@@ -102,10 +102,12 @@ class VKActionSheetView: VKView {
         }
         
         actionSheetTitleContainerView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(actionSheetLabel).inset(20)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(actionSheetLabel.snp.height).inset(-15)
         }
         
         actionSheetLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.greaterThanOrEqualTo(0)
         }

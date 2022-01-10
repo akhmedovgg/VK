@@ -62,7 +62,12 @@ class VKActionSheetInformativeButton: VKActionSheetButton {
         }
     }
     
-    required init(appearance: VKActionSheetInformativeButtonAppearance, iconImage: UIImage, title: String, description: String, completionHandler: (() -> Void)? = nil) {
+    required init(appearance: VKActionSheetInformativeButtonAppearance,
+                  iconImage: UIImage,
+                  title: String,
+                  description: String,
+                  completionHandler: (() -> Void)? = nil,
+                  isEnabled: Bool = true) {
         self.appearance = appearance
         self.iconImageView = {
             let imageView = UIImageView()
@@ -88,8 +93,9 @@ class VKActionSheetInformativeButton: VKActionSheetButton {
         
         super.init(frame: .zero)
         
-        self.completionHandler = completionHandler
         self.commonInit()
+        self.completionHandler = completionHandler
+        self.isEnabled = isEnabled
     }
     
     required init?(coder: NSCoder) {

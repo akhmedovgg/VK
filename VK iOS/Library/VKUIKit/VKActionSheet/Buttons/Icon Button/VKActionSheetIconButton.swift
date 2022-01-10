@@ -21,23 +21,19 @@ class VKActionSheetIconButton: VKActionSheetButton {
         didSet {
             let colorChanged = backgroundColor != appearance.backgroundColor
             if isHighlighted && !colorChanged {
-                if let highlightedTintColor = appearance.highlightedIconTintColor {
-                    iconImageView.tintColor = highlightedTintColor
+                if let tintColor = appearance.highlightedIconTintColor {
+                    iconImageView.tintColor = tintColor
                 }
-                
-                if let highlightedTitleColor = appearance.highlightedTitleColor {
-                    titleLabel.textColor = highlightedTitleColor
-                }
-                
+                titleLabel.textColor = appearance.highlightedTitleColor
                 backgroundColor = appearance.highlightedBackgroundColor
+                bottomLine.backgroundColor = appearance.highlightedBottomLineColor
             } else if !isHighlighted && colorChanged {
                 if let tintColor = appearance.iconTintColor {
                     iconImageView.tintColor = tintColor
                 }
-                
                 titleLabel.textColor = appearance.titleColor
-                
                 backgroundColor = appearance.backgroundColor
+                bottomLine.backgroundColor = appearance.bottomLineColor
             }
         }
     }
@@ -76,14 +72,14 @@ class VKActionSheetIconButton: VKActionSheetButton {
     }
     
     func setupAppearance() {
-        if let iconTintColor = appearance.iconTintColor {
-            iconImageView.tintColor = iconTintColor
+        if let tintColor = appearance.iconTintColor {
+            iconImageView.tintColor = tintColor
         }
-        
-        backgroundColor = appearance.backgroundColor
         
         titleLabel.textColor = appearance.titleColor
         titleLabel.font = appearance.titleFont
+        
+        backgroundColor = appearance.backgroundColor
         
         bottomLine.backgroundColor = appearance.bottomLineColor
         bottomLine.isHidden = !appearance.hasBottomLine

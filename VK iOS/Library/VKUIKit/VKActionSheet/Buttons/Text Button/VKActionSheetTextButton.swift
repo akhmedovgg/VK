@@ -19,15 +19,13 @@ class VKActionSheetTextButton: VKActionSheetButton {
         didSet {
             let colorChanged = backgroundColor != appearance.backgroundColor
             if isHighlighted && !colorChanged {
-                if let highlightedTitleColor = appearance.highlightedTitleColor {
-                    titleLabel.textColor = highlightedTitleColor
-                }
-                
+                titleLabel.textColor = appearance.highlightedTitleColor
                 backgroundColor = appearance.highlightedBackgroundColor
+                bottomLine.backgroundColor = appearance.highlightedBottomLineColor
             } else if !isHighlighted && colorChanged {
                 titleLabel.textColor = appearance.titleColor
-                
                 backgroundColor = appearance.backgroundColor
+                bottomLine.backgroundColor = appearance.bottomLineColor
             }
         }
     }
@@ -60,10 +58,10 @@ class VKActionSheetTextButton: VKActionSheetButton {
     }
     
     private func setupAppearance() {
-        backgroundColor = appearance.backgroundColor
-        
         titleLabel.textColor = appearance.titleColor        
         titleLabel.font = appearance.titleFont
+        
+        backgroundColor = appearance.backgroundColor
         
         bottomLine.backgroundColor = appearance.bottomLineColor
         bottomLine.isHidden = !appearance.hasBottomLine

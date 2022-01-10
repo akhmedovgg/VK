@@ -10,14 +10,14 @@ import UIKit
 
 protocol VKActionSheetTextButtonAppearance {
     var titleColor: UIColor { get }
-    var highlightedTitleColor: UIColor? { get }
+    var highlightedTitleColor: UIColor { get }
     
     var titleFont: UIFont { get }
     
     var backgroundColor: UIColor { get }
-    var highlightedBackgroundColor: UIColor? { get }
+    var highlightedBackgroundColor: UIColor { get }
     
     var hasBottomLine: Bool { get }
-    var bottomLineColor: UIColor? { get }
-    var highlightedBottomLineColor: UIColor? { get }
+    var bottomLineColor: UIColor { get }
+    var highlightedBottomLineColor: UIColor { get }
 }

@@ -37,25 +37,23 @@ class VKExperimentalViewController: UIViewController {
     }
     
     @objc func didTap(_ sender: UIControl) {
-        let actionButtons = [
-            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearanceDestructive(), title: "Удалить видео", completionHandler: {
-                print("Удалить видео")
+        let actions = [
+            VKActionSheetInformativeButton(appearance: VKActionSheetInformativeButtonAppearancePrimary(), iconImage: UIImage(named: "settings_outline_28")!.withRenderingMode(.alwaysTemplate), title: "Качество", description: "Авто", completionHandler: {
+                print("Качество")
+            }),
+            VKActionSheetInformativeButton(appearance: VKActionSheetInformativeButtonAppearancePrimary(), iconImage: UIImage(named: "subtitles_outline_28")!.withRenderingMode(.alwaysTemplate), title: "Субтитры", description: "Отсутствуют", completionHandler: {
+                print("Субтитры")
+            }, isEnabled: false),
+            VKActionSheetInformativeButton(appearance: VKActionSheetInformativeButtonAppearancePrimary(), iconImage: UIImage(named: "play_speed_outline_28")!.withRenderingMode(.alwaysTemplate), title: "Скорость воспроизведения", description: "Обычная", completionHandler: {
+                print("Скорость воспроизведения")
             })
         ]
         
-        let cancelButton = VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearanceCancel(), title: "Отменить") {
+        let cancelAction = VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearanceCancel(), title: "Отменить") {
             print("Отменить")
         }
         
-        let vc = VKActionSheetViewController(title: "Вы действительно хотите удалить это видео из Ваших видео?",
-                                             actionButtons: actionButtons,
-                                             cancelButton: cancelButton)
-        
-        let actionSheet = UIAlertController(title: "A", message: "B", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Button 1", style: .default))
-        actionSheet.addAction(UIAlertAction(title: "Button 2", style: .default))
-        actionSheet.addAction(UIAlertAction(title: "Button 3", style: .default))
-        actionSheet.addAction(UIAlertAction(title: "Close", style: .cancel))
+        let vc = VKActionSheetViewController(actionButtons: actions, cancelButton: cancelAction)
 
         present(vc, animated: true)
     }

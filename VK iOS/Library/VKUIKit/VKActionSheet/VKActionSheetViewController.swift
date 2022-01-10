@@ -103,6 +103,7 @@ class VKActionSheetViewController: VKViewController<VKActionSheetView> {
     
     func setTitle(_ title: String?) {
         rootView.actionSheetLabel.text = title
+        rootView.actionSheetTitleContainerView.isHidden = title == nil
     }
 }
 

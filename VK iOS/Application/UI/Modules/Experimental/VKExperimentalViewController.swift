@@ -38,21 +38,18 @@ class VKExperimentalViewController: UIViewController {
     
     @objc func didTap(_ sender: UIControl) {
         
+        let subtitlesButton = VKActionSheetInformativeButton(appearance: VKActionSheetInformativeButtonAppearancePrimary(), iconImage: UIImage(named: "subtitles_outline_28")!.withRenderingMode(.alwaysTemplate), title: "Субтитры", description: "Отсутствуют", completionHandler: {
+            print("Субтитры")
+        })
+        subtitlesButton.isEnabled = false
+        
         let actionButtons = [
-            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearancePrimary(), iconImage: UIImage(named: "pen_outline_16")!.withRenderingMode(.alwaysTemplate), title: "Редактировать плейлист", completionHandler: {
-                print("Редактировать плейлист")
+            VKActionSheetInformativeButton(appearance: VKActionSheetInformativeButtonAppearancePrimary(), iconImage: UIImage(named: "settings_outline_28")!.withRenderingMode(.alwaysTemplate), title: "Качество", description: "Авто", completionHandler: {
+                print("Качество")
             }),
-            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearancePrimary(), iconImage: UIImage(named: "list_play_outline_16")!.withRenderingMode(.alwaysTemplate), title: "Слушать далее", completionHandler: {
-                print("Слушать далее")
-            }),
-            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearancePrimary(), iconImage: UIImage(named: "share_16")!.withRenderingMode(.alwaysTemplate), title: "Поделиться", completionHandler: {
-                print("Поделиться")
-            }),
-            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearancePrimary(), iconImage: UIImage(named: "copy_24")!.withRenderingMode(.alwaysTemplate), title: "Скопировать ссылку", completionHandler: {
-                print("Скопировать ссылку")
-            }),
-            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearanceDestructive(), iconImage: UIImage(named: "delete_outline_24")!.withRenderingMode(.alwaysTemplate), title: "Удалить плейлист", completionHandler: {
-                print("Удалить плейлист")
+            subtitlesButton,
+            VKActionSheetInformativeButton(appearance: VKActionSheetInformativeButtonAppearancePrimary(), iconImage: UIImage(named: "play_speed_outline_28")!.withRenderingMode(.alwaysTemplate), title: "Скорость воспроизведения", description: "Обычная", completionHandler: {
+                print("Скорость воспроизведения")
             })
         ]
         

@@ -37,25 +37,9 @@ class VKExperimentalViewController: UIViewController {
     }
     
     @objc func didTap(_ sender: UIControl) {
-        
-        let button = VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Лучшие друзья", completionHandler: {
-            print("Лучшие друзья")
-        })
-        button.isChecked = true
-        
         let actionButtons = [
-            button,
-            VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Родственники", completionHandler: {
-                print("Родственники")
-            }),
-            VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Коллеги", completionHandler: {
-                print("Коллеги")
-            }),
-            VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Друзья по школе", completionHandler: {
-                print("Друзья по школе")
-            }),
-            VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Друзья по вузу", completionHandler: {
-                print("Друзья по вузу")
+            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearanceDestructive(), title: "Удалить видео", completionHandler: {
+                print("Удалить видео")
             })
         ]
         
@@ -63,7 +47,9 @@ class VKExperimentalViewController: UIViewController {
             print("Отменить")
         }
         
-        let vc = VKActionSheetViewController(actionButtons: actionButtons, cancelButton: cancelButton)
+        let vc = VKActionSheetViewController(title: "Вы действительно хотите удалить это видео из Ваших видео?",
+                                             actionButtons: actionButtons,
+                                             cancelButton: cancelButton)
         
         let actionSheet = UIAlertController(title: "A", message: "B", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Button 1", style: .default))

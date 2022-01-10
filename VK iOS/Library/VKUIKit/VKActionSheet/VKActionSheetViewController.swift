@@ -13,10 +13,11 @@ class VKActionSheetViewController: VKViewController<VKActionSheetView> {
     private var panGestureRecognizer: UIPanGestureRecognizer!
     private var previousControl: UIControl?
     
-    required init(actionButtons: [VKActionSheetButton], cancelButton: VKActionSheetButton) {
+    required init(title: String? = nil, actionButtons: [VKActionSheetButton], cancelButton: VKActionSheetButton) {
         super.init(nibName: nil, bundle: nil)
         setupTransition()
         setupActionButtons(actionButtons: actionButtons, cancelButton: cancelButton)
+        setTitle(title)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -98,6 +99,10 @@ class VKActionSheetViewController: VKViewController<VKActionSheetView> {
         default:
             break
         }
+    }
+    
+    func setTitle(_ title: String?) {
+        rootView.actionSheetLabel.text = title
     }
 }
 

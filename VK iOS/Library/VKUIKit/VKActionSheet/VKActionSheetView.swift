@@ -42,6 +42,28 @@ class VKActionSheetView: VKView {
         return stackView
     }()
     
+    let actionSheetTitleContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = VKPalette.white
+        return view
+    }()
+    
+    let actionSheetLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 13, weight: .semibold)
+        label.textColor = VKPalette.steelGray500
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.text = ""
+        return label
+    }()
+    
+    let actionSheetTitleContainerViewBottomLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = VKPalette.black.withAlphaComponent(0.12)
+        return view
+    }()
+    
     override func setupAppearance() {
         backgroundColor = .clear
     }
@@ -51,6 +73,9 @@ class VKActionSheetView: VKView {
         contentView.addSubview(cancelButtonContainer)
         contentView.addSubview(stackViewContainer)
         stackViewContainer.addSubview(stackView)
+        stackView.addArrangedSubview(actionSheetTitleContainerView)
+        actionSheetTitleContainerView.addSubview(actionSheetLabel)
+        actionSheetTitleContainerView.addSubview(actionSheetTitleContainerViewBottomLine)
     }
     
     override func setupConstraints() {
@@ -74,6 +99,20 @@ class VKActionSheetView: VKView {
         stackView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
             make.height.greaterThanOrEqualTo(0)
+        }
+        
+        actionSheetTitleContainerView.snp.makeConstraints { make in
+            make.top.bottom.equalTo(actionSheetLabel).inset(20)
+        }
+        
+        actionSheetLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.greaterThanOrEqualTo(0)
+        }
+        
+        actionSheetTitleContainerViewBottomLine.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(0.5)
         }
     }
     

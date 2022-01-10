@@ -32,7 +32,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass_circle_fill_purple_28" translatesAutoresizingMaskIntoConstraints="NO" id="QZW-MN-vka">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete_outline_24" translatesAutoresizingMaskIntoConstraints="NO" id="QZW-MN-vka">
                                 <rect key="frame" x="157" y="403" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="XZ0-RH-LJf"/>
@@ -62,24 +62,19 @@
                             <constraint firstItem="uV7-R7-orz" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="rAW-Mp-cxG"/>
                             <constraint firstItem="QZW-MN-vka" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="rib-Sx-4oD"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="aOA-dx-EJC" appends="YES" id="tSi-tQ-TJh"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="gestureRecognizer" destination="aOA-dx-EJC" id="AhQ-oY-iws"/>
                         <outlet property="mainButton" destination="jzO-eg-Mpf" id="6ax-bh-cd5"/>
-                        <outlet property="plusIcon" destination="QZW-MN-vka" id="XQD-2a-wdi"/>
+                        <outlet property="mainIcon" destination="QZW-MN-vka" id="XQD-2a-wdi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <gestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" id="aOA-dx-EJC"/>
             </objects>
             <point key="canvasLocation" x="-26.086956521739133" y="81.696428571428569"/>
         </scene>
     </scenes>
     <resources>
-        <image name="compass_circle_fill_purple_28" width="512" height="512"/>
+        <image name="delete_outline_24" width="512" height="512"/>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

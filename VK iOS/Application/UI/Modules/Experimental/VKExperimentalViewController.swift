@@ -39,22 +39,21 @@ class VKExperimentalViewController: UIViewController {
     @objc func didTap(_ sender: UIControl) {
         
         let actionButtons = [
-            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary(), title: "Сохранить в закладках", completionHandler: {
-                print("Сохранить в закладках")
+            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearancePrimary(), iconImage: UIImage(named: "pen_outline_16")!.withRenderingMode(.alwaysTemplate), title: "Редактировать плейлист", completionHandler: {
+                print("Редактировать плейлист")
             }),
-            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary(), title: "Закрепить запись", completionHandler: {
-                print("Закрепить запись")
+            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearancePrimary(), iconImage: UIImage(named: "list_play_outline_16")!.withRenderingMode(.alwaysTemplate), title: "Слушать далее", completionHandler: {
+                print("Слушать далее")
             }),
-            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary(), title: "Выключить комментирование", completionHandler: {
-                print("Выключить комментирование")
+            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearancePrimary(), iconImage: UIImage(named: "share_16")!.withRenderingMode(.alwaysTemplate), title: "Поделиться", completionHandler: {
+                print("Поделиться")
             }),
-            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary(), title: "Закрепить запись", completionHandler: {
-                print("Закрепить запись")
+            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearancePrimary(), iconImage: UIImage(named: "copy_24")!.withRenderingMode(.alwaysTemplate), title: "Скопировать ссылку", completionHandler: {
+                print("Скопировать ссылку")
             }),
-            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearanceDestructive(), title: "Удалить запись", completionHandler: {
-                print("Удалить запись")
+            VKActionSheetIconButton(appearance: VKActionSheetIconButtonAppearanceDestructive(), iconImage: UIImage(named: "delete_outline_24")!.withRenderingMode(.alwaysTemplate), title: "Удалить плейлист", completionHandler: {
+                print("Удалить плейлист")
             })
-            
         ]
         
         let cancelButton = VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearanceCancel(), title: "Отменить") {

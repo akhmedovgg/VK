@@ -2,14 +2,16 @@
 //  VKActionSheetButton.swift
 //  VK iOS
 //
-//  Created by Sherzod Akhmedov on 03/01/22.
+//  Created by Sherzod Akhmedov on 10/01/22.
 //
 
 import Foundation
 import UIKit
 
-class VKActionSheetTextButton: VKActionSheetButton {
-    let appearance: VKActionSheetTextButtonAppearance
+class VKActionSheetIconButton: VKActionSheetButton {
+    let appearance: VKActionSheetIconButtonAppearance
+    
+    let iconImageView: UIImageView
     
     let titleLabel: UILabel
     
@@ -19,12 +21,20 @@ class VKActionSheetTextButton: VKActionSheetButton {
         didSet {
             let colorChanged = backgroundColor != appearance.backgroundColor
             if isHighlighted && !colorChanged {
+                if let highlightedTintColor = appearance.highlightedIconTintColor {
+                    iconImageView.tintColor = highlightedTintColor
+                }
+                
                 if let highlightedTitleColor = appearance.highlightedTitleColor {
                     titleLabel.textColor = highlightedTitleColor
                 }
                 
                 backgroundColor = appearance.highlightedBackgroundColor
             } else if !isHighlighted && colorChanged {
+                if let tintColor = appearance.iconTintColor {
+                    iconImageView.tintColor = tintColor
+                }
+                
                 titleLabel.textColor = appearance.titleColor
                 
                 backgroundColor = appearance.backgroundColor
@@ -32,13 +42,19 @@ class VKActionSheetTextButton: VKActionSheetButton {
         }
     }
     
-    required init(appearance: VKActionSheetTextButtonAppearance, title: String, completionHandler: (() -> Void)? = nil) {
+    required init(appearance: VKActionSheetIconButtonAppearance, iconImage: UIImage, title: String, completionHandler: (() -> Void)? = nil) {
         self.appearance = appearance
+        self.iconImageView = {
+            let imageView = UIImageView()
+            imageView.image = iconImage
+            imageView.contentMode = .scaleAspectFit
+            return imageView
+        }()
         self.titleLabel = {
             let label = UILabel()
             label.text = title
             label.numberOfLines = 1
-            label.textAlignment = .center
+            label.textAlignment = .left
             return label
         }()
         self.bottomLine = UIView()
@@ -59,25 +75,37 @@ class VKActionSheetTextButton: VKActionSheetButton {
         self.setupConstraints()
     }
     
-    private func setupAppearance() {
+    func setupAppearance() {
+        if let iconTintColor = appearance.iconTintColor {
+            iconImageView.tintColor = iconTintColor
+        }
+        
         backgroundColor = appearance.backgroundColor
         
-        titleLabel.textColor = appearance.titleColor        
+        titleLabel.textColor = appearance.titleColor
         titleLabel.font = appearance.titleFont
         
         bottomLine.backgroundColor = appearance.bottomLineColor
         bottomLine.isHidden = !appearance.hasBottomLine
     }
     
-    private func setupViewHierarchy() {
+    func setupViewHierarchy() {
+        addSubview(iconImageView)
         addSubview(titleLabel)
         addSubview(bottomLine)
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
+        iconImageView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().inset(18)
+            make.width.height.equalTo(28)
+        }
+        
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.equalTo(iconImageView.snp.trailing).inset(-14)
+            make.trailing.equalToSuperview().inset(16)
             make.height.greaterThanOrEqualTo(0)
         }
         

@@ -38,18 +38,24 @@ class VKExperimentalViewController: UIViewController {
     
     @objc func didTap(_ sender: UIControl) {
         
-        let subtitlesButton = VKActionSheetInformativeButton(appearance: VKActionSheetInformativeButtonAppearancePrimary(), iconImage: UIImage(named: "subtitles_outline_28")!.withRenderingMode(.alwaysTemplate), title: "Субтитры", description: "Отсутствуют", completionHandler: {
-            print("Субтитры")
+        let button = VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Лучшие друзья", completionHandler: {
+            print("Лучшие друзья")
         })
-        subtitlesButton.isEnabled = false
+        button.isChecked = true
         
         let actionButtons = [
-            VKActionSheetInformativeButton(appearance: VKActionSheetInformativeButtonAppearancePrimary(), iconImage: UIImage(named: "settings_outline_28")!.withRenderingMode(.alwaysTemplate), title: "Качество", description: "Авто", completionHandler: {
-                print("Качество")
+            button,
+            VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Родственники", completionHandler: {
+                print("Родственники")
             }),
-            subtitlesButton,
-            VKActionSheetInformativeButton(appearance: VKActionSheetInformativeButtonAppearancePrimary(), iconImage: UIImage(named: "play_speed_outline_28")!.withRenderingMode(.alwaysTemplate), title: "Скорость воспроизведения", description: "Обычная", completionHandler: {
-                print("Скорость воспроизведения")
+            VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Коллеги", completionHandler: {
+                print("Коллеги")
+            }),
+            VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Друзья по школе", completionHandler: {
+                print("Друзья по школе")
+            }),
+            VKActionSheetCheckboxButton(appearance: VKActionSheetCheckboxButtonAppearancePrimary(), title: "Друзья по вузу", completionHandler: {
+                print("Друзья по вузу")
             })
         ]
         

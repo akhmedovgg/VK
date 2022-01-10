@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class VKActionSheetPresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    private let duration = 0.3
+    private let duration = 0.256
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration

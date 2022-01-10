@@ -37,18 +37,38 @@ class VKExperimentalViewController: UIViewController {
     }
     
     @objc func didTap(_ sender: UIControl) {
-        let b1 = VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary())
-        b1.titleLabel.text = "Button 1"
         
         let actionButtons = [
-            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary())
+            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary(), title: "Сохранить в закладках", completionHandler: {
+                print("Сохранить в закладках")
+            }),
+            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary(), title: "Закрепить запись", completionHandler: {
+                print("Закрепить запись")
+            }),
+            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary(), title: "Выключить комментирование", completionHandler: {
+                print("Выключить комментирование")
+            }),
+            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary(), title: "Закрепить запись", completionHandler: {
+                print("Закрепить запись")
+            }),
+            VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearanceDestructive(), title: "Удалить запись", completionHandler: {
+                print("Удалить запись")
+            })
+            
         ]
         
-        let cancelButton = VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearancePrimary())
-        cancelButton.titleLabel.text = "Cancel"
+        let cancelButton = VKActionSheetTextButton(appearance: VKActionSheetTextButtonAppearanceCancel(), title: "Отменить") {
+            print("Отменить")
+        }
         
         let vc = VKActionSheetViewController(actionButtons: actionButtons, cancelButton: cancelButton)
         
+        let actionSheet = UIAlertController(title: "A", message: "B", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Button 1", style: .default))
+        actionSheet.addAction(UIAlertAction(title: "Button 2", style: .default))
+        actionSheet.addAction(UIAlertAction(title: "Button 3", style: .default))
+        actionSheet.addAction(UIAlertAction(title: "Close", style: .cancel))
+
         present(vc, animated: true)
     }
 }

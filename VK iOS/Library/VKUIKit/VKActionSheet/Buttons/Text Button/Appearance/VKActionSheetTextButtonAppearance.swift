@@ -12,6 +12,8 @@ protocol VKActionSheetTextButtonAppearance {
     var titleColor: UIColor { get }
     var highlightedTitleColor: UIColor? { get }
     
+    var titleFont: UIFont { get }
+    
     var backgroundColor: UIColor { get }
     var highlightedBackgroundColor: UIColor? { get }
     

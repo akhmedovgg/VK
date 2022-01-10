@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,31 +22,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@Telegram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uV7-R7-orz">
-                                <rect key="frame" x="157" y="600" width="147" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uV7-R7-orz">
+                                <rect key="frame" x="130" y="326" width="154.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="OHk-QH-Jhk"/>
+                                    <constraint firstAttribute="height" constant="35" id="kp4-OS-Iy3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="VKSansDisplay-Medium" family="VKSansDisplay-Medium" pointSize="28"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="advertising_16" translatesAutoresizingMaskIntoConstraints="NO" id="QZW-MN-vka">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass_circle_fill_purple_28" translatesAutoresizingMaskIntoConstraints="NO" id="QZW-MN-vka">
+                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="XZ0-RH-LJf"/>
+                                    <constraint firstAttribute="width" constant="100" id="d9R-eV-wWf"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzO-eg-Mpf">
+                                <rect key="frame" x="134" y="545" width="146" height="52"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="8Yx-vV-f2x"/>
+                                    <constraint firstAttribute="height" constant="52" id="zSj-Iu-Cj6"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="QZW-MN-vka" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="572-3r-fpG"/>
+                            <constraint firstItem="QZW-MN-vka" firstAttribute="top" secondItem="uV7-R7-orz" secondAttribute="bottom" constant="42" id="Iea-yr-bFS"/>
+                            <constraint firstItem="jzO-eg-Mpf" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Xgr-1H-SZV"/>
+                            <constraint firstItem="jzO-eg-Mpf" firstAttribute="top" secondItem="QZW-MN-vka" secondAttribute="bottom" constant="42" id="e12-Qw-Csp"/>
+                            <constraint firstItem="uV7-R7-orz" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="rAW-Mp-cxG"/>
+                            <constraint firstItem="QZW-MN-vka" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="rib-Sx-4oD"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aOA-dx-EJC" appends="YES" id="tSi-tQ-TJh"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="gestureRecognizer" destination="aOA-dx-EJC" id="AhQ-oY-iws"/>
+                        <outlet property="mainButton" destination="jzO-eg-Mpf" id="6ax-bh-cd5"/>
                         <outlet property="plusIcon" destination="QZW-MN-vka" id="XQD-2a-wdi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <gestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" id="aOA-dx-EJC"/>
             </objects>
             <point key="canvasLocation" x="-26.086956521739133" y="81.696428571428569"/>
         </scene>
     </scenes>
     <resources>
-        <image name="advertising_16" width="512" height="512"/>
+        <image name="compass_circle_fill_purple_28" width="512" height="512"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

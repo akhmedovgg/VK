@@ -1,5 +1,5 @@
 //
-//  VKActionSheetTextButtonAppearancePrimary.swift
+//  VKActionSheetTextButtonAppearanceDestructive.swift
 //  VK iOS
 //
 //  Created by Sherzod Akhmedov on 03/01/22.
@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class VKActionSheetTextButtonAppearancePrimary: VKActionSheetTextButtonAppearance {
-    var titleColor: UIColor = VKPalette.azure300
-    var highlightedTitleColor: UIColor? = VKPalette.azure300.withAlphaComponent(0.8)
+class VKActionSheetTextButtonAppearanceDestructive: VKActionSheetTextButtonAppearance {
+    var titleColor: UIColor = VKPalette.red
+    var highlightedTitleColor: UIColor? = VKPalette.red
     
     var titleFont: UIFont = .systemFont(ofSize: 20, weight: .regular)
     

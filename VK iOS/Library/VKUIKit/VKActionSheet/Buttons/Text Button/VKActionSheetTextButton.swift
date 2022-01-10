@@ -8,19 +8,12 @@
 import Foundation
 import UIKit
 
-class VKActionSheetTextButton: UIControl, VKActionSheetButton {
+class VKActionSheetTextButton: VKActionSheetButton {
     let appearance: VKActionSheetTextButtonAppearance
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Отменить"
-        return label
-    }()
+    let titleLabel: UILabel
     
-    let bottomLine: UIView = {
-        let view = UIView()
-        return view
-    }()
+    let bottomLine: UIView
     
     override var isHighlighted: Bool {
         didSet {
@@ -33,9 +26,18 @@ class VKActionSheetTextButton: UIControl, VKActionSheetButton {
         }
     }
     
-    required init(appearance: VKActionSheetTextButtonAppearance) {
+    required init(appearance: VKActionSheetTextButtonAppearance, title: String, completionHandler: (() -> Void)? = nil) {
         self.appearance = appearance
+        self.titleLabel = {
+            let label = UILabel()
+            label.text = title
+            return label
+        }()
+        self.bottomLine = UIView()
+        
         super.init(frame: .zero)
+        
+        self.completionHandler = completionHandler
         self.commonInit()
     }
     
@@ -51,8 +53,12 @@ class VKActionSheetTextButton: UIControl, VKActionSheetButton {
     
     private func setupAppearance() {
         backgroundColor = appearance.backgroundColor
+        
         titleLabel.textColor = appearance.titleColor
         titleLabel.font = .systemFont(ofSize: 20, weight: .regular)
+        
+        titleLabel.font = appearance.titleFont
+        
         bottomLine.backgroundColor = appearance.bottomLineColor
         bottomLine.isHidden = !appearance.hasBottomLine
     }

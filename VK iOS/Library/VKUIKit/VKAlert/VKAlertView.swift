@@ -11,7 +11,7 @@ import SnapKit
 
 class VKAlertView: VKView {
     private(set) var blurView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.translatesAutoresizingMaskIntoConstraints = false
         blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -22,6 +22,7 @@ class VKAlertView: VKView {
         let view = UIView()
         view.backgroundColor = VKPalette.white
         view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
         return view
     }()
     

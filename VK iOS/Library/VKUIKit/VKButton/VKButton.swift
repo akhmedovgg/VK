@@ -11,40 +11,30 @@ import UIKit
 class VKButton: UIControl {
     override var isHighlighted: Bool {
         didSet {
-            let hasAnimation = layer.animation(forKey: "opacity") != nil
-            if isHighlighted && !hasAnimation {
-                CATransaction.begin()
-                CATransaction.setCompletionBlock {[weak self] in
-                    self?.alpha = self?.appearance.highlightedAlphaValue ?? 0.4
+            if isHighlighted {
+                UIView.animate(withDuration: 0.0512, delay: 0, options: .curveLinear) { [weak self] in
+                    guard let self = self else {
+                        return
+                    }
+                    self.backgroundColor = self.appearance.highlightedBackgroundColor
+                    self.titleLabel.textColor = self.appearance.highlightedTextColor
+                    
+                    if let color = self.appearance.highlightedBorderColor {
+                        self.layer.borderColor = color.cgColor
+                    }
                 }
-                
-                let animation = CABasicAnimation(keyPath: "opacity")
-                animation.fromValue = 1
-                animation.toValue = appearance.highlightedAlphaValue
-                animation.duration = 0.04
-                animation.repeatCount = 0
-                animation.fillMode = .forwards
-                animation.isRemovedOnCompletion = false
-                self.layer.add(animation, forKey: "opacity")
-                
-                CATransaction.commit()
-            } else if !isHighlighted && hasAnimation {
-                CATransaction.begin()
-                CATransaction.setCompletionBlock {[weak self] in
-                    self?.alpha = 1
-                    self?.layer.removeAnimation(forKey: "opacity")
+            } else {
+                UIView.animate(withDuration: 0.0512, delay: 0, options: .curveLinear) { [weak self] in
+                    guard let self = self else {
+                        return
+                    }
+                    self.backgroundColor = self.appearance.backgroundColor
+                    self.titleLabel.textColor = self.appearance.textColor
+                    
+                    if let color = self.appearance.borderColor {
+                        self.layer.borderColor = color.cgColor
+                    }
                 }
-                
-                let animation = CABasicAnimation(keyPath: "opacity")
-                animation.fromValue = appearance.highlightedAlphaValue
-                animation.toValue = 1
-                animation.duration = 0.07
-                animation.repeatCount = 0
-                animation.fillMode = .forwards
-                animation.isRemovedOnCompletion = false
-                self.layer.add(animation, forKey: "opacity")
-                
-                CATransaction.commit()
             }
         }
     }
@@ -114,6 +104,7 @@ class VKButton: UIControl {
         layer.borderColor = appearance.borderColor?.cgColor
         layer.borderWidth = appearance.borderWidth
         layer.cornerRadius = appearance.cornerRadius
+        
         titleLabel.font = .systemFont(ofSize: size.fontSize, weight: .medium)
     }
     

@@ -64,19 +64,11 @@ class VKAlertViewController: VKViewController<VKAlertView> {
                 }()
                 rootView.buttonsStackView.addArrangedSubview(hr)
             }
-            
-            let button: VKButton = {
-                let button = VKButton(appearance: VKButtonAppearanceTertiary(), size: VKButtonSizeMediumWithoutIcon())
-                button.tag = index
-                button.titleLabel.text = action.title
-                button.titleLabel.textAlignment = .center
-                button.titleLabel.textColor = action.style == .destructive ? VKPalette.red : VKPalette.azure300
-                button.titleLabel.font = .systemFont(ofSize: 17, weight: action.style == .default ? .semibold : .regular)
-                button.heightAnchor.constraint(equalToConstant: 44).isActive = true
-                button.addTarget(self, action: #selector(didTapAction), for: .touchUpInside)
-                return button
-            }()
-            
+                        
+            let button = VKAlertButton(action: action)
+            button.addTarget(self, action: #selector(didTapAction), for: .touchUpInside)
+            button.tag = index
+
             rootView.buttonsStackView.addArrangedSubview(button)
         }
     }

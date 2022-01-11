@@ -9,10 +9,15 @@ import Foundation
 import UIKit
 
 class VKButtonAppearanceOutline: VKButtonAppearance {
-	var backgroundColor: UIColor = VKPalette.clear
-	var textColor: UIColor = VKPalette.lightButtonOutlineForgeground
-	var borderColor: UIColor? = VKPalette.lightButtonOutlineBorder
-	var borderWidth: CGFloat = 2
+    var backgroundColor: UIColor = VKPalette.clear
+    var highlightedBackgroundColor: UIColor = VKPalette.clear
+    
+    var textColor: UIColor = VKPalette.lightButtonOutlineForgeground
+    var highlightedTextColor: UIColor = VKPalette.lightButtonOutlineForgeground.withAlphaComponent(0.5)
+    
+    var borderColor: UIColor? = VKPalette.lightButtonOutlineBorder
+    var highlightedBorderColor: UIColor? = VKPalette.lightButtonOutlineBorder.withAlphaComponent(0.5)
+    
+    var borderWidth: CGFloat = 2
     var cornerRadius: CGFloat = 10
-	var highlightedAlphaValue: CGFloat = 0.4
 }

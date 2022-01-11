@@ -9,10 +9,18 @@ import Foundation
 import UIKit
 
 class VKActionSheetView: VKView {
-    let contentView: UIView = {
+    let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = VKPalette.clear
         view.layer.masksToBounds = true
+        return view
+    }()
+    
+    let contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 14
         return view
     }()
     
@@ -32,16 +40,6 @@ class VKActionSheetView: VKView {
         return view
     }()
     
-    let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 0
-        stackView.layer.cornerRadius = 14
-        stackView.layer.masksToBounds = true
-        return stackView
-    }()
-    
     let actionSheetTitleContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = VKPalette.white
@@ -58,6 +56,14 @@ class VKActionSheetView: VKView {
         return label
     }()
     
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 0
+        return stackView
+    }()
+    
     let actionSheetTitleContainerViewBottomLine: UIView = {
         let view = UIView()
         view.backgroundColor = VKPalette.black.withAlphaComponent(0.12)
@@ -69,41 +75,43 @@ class VKActionSheetView: VKView {
     }
     
     override func setupViewHierarchy() {
-        addSubview(contentView)
+        addSubview(backgroundView)
+        backgroundView.addSubview(contentView)
         contentView.addSubview(cancelButtonContainer)
         contentView.addSubview(stackViewContainer)
-        stackViewContainer.addSubview(stackView)
-        stackView.addArrangedSubview(actionSheetTitleContainerView)
+        stackViewContainer.addSubview(actionSheetTitleContainerView)
         actionSheetTitleContainerView.addSubview(actionSheetLabel)
         actionSheetTitleContainerView.addSubview(actionSheetTitleContainerViewBottomLine)
+        stackViewContainer.addSubview(stackView)
     }
     
     override func setupConstraints() {
-        contentView.snp.makeConstraints { make in
+        backgroundView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(stackViewContainer.snp.top)
+            make.top.equalTo(contentView.snp.top)
+        }
+        
+        contentView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(8)
+            make.bottom.equalToSuperview().inset(24)
+            make.top.equalTo(actionSheetTitleContainerView.snp.top)
         }
         
         cancelButtonContainer.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(8)
-            make.bottom.equalToSuperview().inset(24)
+            make.leading.trailing.bottom.equalToSuperview()
             make.height.greaterThanOrEqualTo(0)
         }
         
         stackViewContainer.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(8)
+            make.top.equalTo(actionSheetTitleContainerView.snp.top)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(cancelButtonContainer.snp.top).inset(-8)
             make.height.greaterThanOrEqualTo(0)
         }
         
-        stackView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-            make.height.greaterThanOrEqualTo(0)
-        }
-        
         actionSheetTitleContainerView.snp.makeConstraints { make in
+            make.top.bottom.equalTo(actionSheetLabel).inset(-15)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(actionSheetLabel.snp.height).inset(-15)
         }
         
         actionSheetLabel.snp.makeConstraints { make in
@@ -116,10 +124,15 @@ class VKActionSheetView: VKView {
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(0.5)
         }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.equalTo(actionSheetTitleContainerView.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.greaterThanOrEqualTo(0)
+        }
     }
     
     func setupActionButtons(actionButtons: [VKActionSheetButton], cancelButton: VKActionSheetButton) {
-        
         cancelButtonContainer.addSubview(cancelButton)
         cancelButton.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalToSuperview()
@@ -130,6 +143,21 @@ class VKActionSheetView: VKView {
             stackView.addArrangedSubview(actionButton)
             stackView.snp.makeConstraints { make in
                 make.height.greaterThanOrEqualTo(56)
+            }
+        }
+    }
+    
+    func setTitle(_ title: String?) {
+        actionSheetLabel.text = title
+        
+        if title == nil {
+            actionSheetTitleContainerView.snp.remakeConstraints { make in
+                make.height.equalTo(0)
+            }
+        } else {
+            actionSheetTitleContainerView.snp.remakeConstraints { make in
+                make.top.bottom.equalTo(actionSheetLabel).inset(-15)
+                make.leading.trailing.equalToSuperview()
             }
         }
     }

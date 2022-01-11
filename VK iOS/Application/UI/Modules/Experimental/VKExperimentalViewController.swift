@@ -53,7 +53,8 @@ class VKExperimentalViewController: UIViewController {
             print("Отменить")
         }
         
-        let vc = VKActionSheetViewController(actionButtons: actions, cancelButton: cancelAction)
+        let vc = VKActionSheetViewController(title: "Asdasdaasd", actionButtons: actions, cancelButton: cancelAction)
+        vc.setTitle(nil)
 
         present(vc, animated: true)
     }

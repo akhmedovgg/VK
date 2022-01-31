@@ -1,7 +1,7 @@
 {
    "name": "VK",
    "options": {
-      "bundleIdPrefix": "ru.cocoexe",
+      "bundleIdPrefix": "uz.akhmedovgg.pet",
       "generateEmptyDirectories": true
    },
    "targets": {
@@ -18,25 +18,29 @@
             },
             {
                "framework": "VK iOS/Frameworks/SwiftyVK 3.4.2.xcframework"
+            },
+            {
+               "framework": "VK iOS/Frameworks/Swinject 2.8.1.xcframework"
             }
          ],
          "info": {
             "path": "VK iOS/Resources/Info.plist",
             "properties": {
                "CFBundleName": "VK",
-               "CFBundleIdentifier": "ru.cocoexe.VKiOS",
                "UILaunchStoryboardName": "LaunchScreen",
                "UISupportedInterfaceOrientations": [
                   "UIInterfaceOrientationPortrait"
                ],
                "UIAppFonts": [
                   "VK_Sans_Display_Medium"
-               ]
+               ],
+               "UIUserInterfaceStyle": "Light"
             }
          },
          "preBuildScripts": [
             {
                "name": "Swiftlint",
+               "shell": "/bin/zsh",
                "script": "if test -d \"\/opt\/homebrew\/bin\/\"; then\r\n  PATH=\"\/opt\/homebrew\/bin\/:${PATH}\"\r\nfi\r\n\r\nexport PATH\r\n\r\nif which swiftlint >\/dev\/null; then\r\n  cd ${PROJECT_DIR}\r\n  swiftlint --config .swiftlint.yml\r\nelse\r\n  echo \"warning: SwiftLint not installed, download from https:\/\/github.com\/realm\/SwiftLint\"\r\nfi\r\n"
             }
          ]

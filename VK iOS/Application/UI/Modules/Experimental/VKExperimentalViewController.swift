@@ -10,7 +10,7 @@ import UIKit
 class VKExperimentalViewController: UIViewController {
     let primaryButton: VKButton = {
         let button = VKButton(appearance: VKButtonAppearanceOutline(), size: VKButtonSizeMediumWithoutIcon())
-        button.setLeftSideIcon(UIImage(named: "add_12")!.withRenderingMode(.alwaysTemplate))
+        button.setLeftSideIcon(UIImage(named: "12/add_12")!.withRenderingMode(.alwaysTemplate))
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel.text = "Add Friend"
         button.titleLabel.textAlignment = .center

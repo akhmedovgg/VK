@@ -16,16 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RhZ-6A-jFD">
-                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="28/logo_vk_color_28" translatesAutoresizingMaskIntoConstraints="NO" id="RhZ-6A-jFD">
+                                <rect key="frame" x="143" y="389" width="128" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="TVP-v1-gYO"/>
-                                    <constraint firstAttribute="width" constant="100" id="rbT-sP-jlF"/>
+                                    <constraint firstAttribute="height" constant="128" id="TVP-v1-gYO"/>
+                                    <constraint firstAttribute="width" constant="128" id="rbT-sP-jlF"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RhZ-6A-jFD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fzw-v9-vWH"/>
                             <constraint firstItem="RhZ-6A-jFD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="h2d-ZB-V4u"/>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DefaultIcon" width="341" height="341"/>
+        <image name="28/logo_vk_color_28" width="512" height="512"/>
     </resources>
 </document>

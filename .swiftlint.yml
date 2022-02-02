@@ -17,6 +17,10 @@ type_body_length:
 file_length:
     warning: 500
     error: 1200
+nesting:
+    type_level:
+        warning: 5
+        error: 6
 type_name:
     min_length: 4
     max_length:

@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  VK
+
+  Created by Sherzod Akhmedov on 01/02/22.
+  
+*/
+
+// MARK: - Common
+
+"ERROR" = "Ошибка";
+"CLOSE" = "Закрыть";
+"BACK" = "Назад";
+
+// MARK: - VKMAuth
+
+"VKM_AUTH_SIGN_IN_USING_VK" = "Войти через VK";
+"VKM_AUTH_CHANGE_LANGUAGE" = "Сменить язык";
+"VKM_AUTH_AUTH_DECLINED_MESSAGE" = "Мы обнаружили, что вы отказались предоставить приложению необходимые данные для его работы. Пожалуйста, войдите снова и разрешите приложению предоставлять данные";
+"VKM_AUTH_AUTH_FAILED_MESSAGE" = "Произошла ошибка при авторизации, повторите попытку позже";
+"VKM_AUTH_UNKNOWN_ERROR_MESSAGE" = "Что-то пошло не так. Пожалуйста, повторите попытку позже";

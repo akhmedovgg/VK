@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  VK
+
+  Created by Sherzod Akhmedov on 01/02/22.
+  
+*/
+
+// MARK: - Common
+
+"ERROR" = "Error";
+"CLOSE" = "Close";
+"BACK" = "Back";
+
+// MARK: - VKMAuth
+
+"VKM_AUTH_SIGN_IN_USING_VK" = "Sign In using VK";
+"VKM_AUTH_CHANGE_LANGUAGE" = "Change language";
+"VKM_AUTH_AUTH_DECLINED_MESSAGE" = "We detected that you declined to provide the application with the necessary data for its operation. Please log in again and allow the application to provide data";
+"VKM_AUTH_AUTH_FAILED_MESSAGE" = "An error occurred while logging in, please try again later";
+"VKM_AUTH_UNKNOWN_ERROR_MESSAGE" = "Something went wrong, please try again later";
+

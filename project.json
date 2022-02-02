@@ -1,49 +1,49 @@
 {
-   "name": "VK",
-   "options": {
-      "bundleIdPrefix": "uz.akhmedovgg.pet",
-      "generateEmptyDirectories": true
-   },
-   "targets": {
-      "VK iOS": {
-         "type": "application",
-         "platform": "iOS",
-         "deploymentTarget": "10.0",
-         "sources": [
-            "VK iOS"
-         ],
-         "dependencies": [
-            {
-               "framework": "VK iOS/Frameworks/SnapKit 5.0.1.xcframework"
+    "name": "VK",
+    "options": {
+        "bundleIdPrefix": "uz.akhmedovgg.pet",
+        "generateEmptyDirectories": true
+    },
+    "targets": {
+        "VK iOS": {
+            "type": "application",
+            "platform": "iOS",
+            "deploymentTarget": "10.0",
+            "sources": [
+                "VK iOS"
+            ],
+            "dependencies": [
+                {
+                    "framework": "VK iOS/Frameworks/SnapKit 5.0.1.xcframework"
+                },
+                {
+                    "framework": "VK iOS/Frameworks/SwiftyVK 3.4.2.xcframework"
+                },
+                {
+                    "framework": "VK iOS/Frameworks/Swinject 2.8.1.xcframework"
+                }
+            ],
+            "info": {
+                "path": "VK iOS/Resources/Info.plist",
+                "properties": {
+                    "CFBundleName": "VK",
+                    "UILaunchStoryboardName": "LaunchScreen",
+                    "UISupportedInterfaceOrientations": [
+                        "UIInterfaceOrientationPortrait"
+                    ],
+                    "UIAppFonts": [
+                        "VK_Sans_Display_Medium"
+                    ],
+                    "UIUserInterfaceStyle": "Light"
+                }
             },
-            {
-               "framework": "VK iOS/Frameworks/SwiftyVK 3.4.2.xcframework"
-            },
-            {
-               "framework": "VK iOS/Frameworks/Swinject 2.8.1.xcframework"
-            }
-         ],
-         "info": {
-            "path": "VK iOS/Resources/Info.plist",
-            "properties": {
-               "CFBundleName": "VK",
-               "UILaunchStoryboardName": "LaunchScreen",
-               "UISupportedInterfaceOrientations": [
-                  "UIInterfaceOrientationPortrait"
-               ],
-               "UIAppFonts": [
-                  "VK_Sans_Display_Medium"
-               ],
-               "UIUserInterfaceStyle": "Light"
-            }
-         },
-         "preBuildScripts": [
-            {
-               "name": "Swiftlint",
-               "shell": "/bin/zsh",
-               "script": "if test -d \"\/opt\/homebrew\/bin\/\"; then\r\n  PATH=\"\/opt\/homebrew\/bin\/:${PATH}\"\r\nfi\r\n\r\nexport PATH\r\n\r\nif which swiftlint >\/dev\/null; then\r\n  cd ${PROJECT_DIR}\r\n  swiftlint --config .swiftlint.yml\r\nelse\r\n  echo \"warning: SwiftLint not installed, download from https:\/\/github.com\/realm\/SwiftLint\"\r\nfi\r\n"
-            }
-         ]
-      }
-   }
+            "preBuildScripts": [
+                {
+                    "name": "Swiftlint",
+                    "shell": "/bin/zsh",
+                    "script": "if test -d \"\/opt\/homebrew\/bin\/\"; then\r\n  PATH=\"\/opt\/homebrew\/bin\/:${PATH}\"\r\nfi\r\n\r\nexport PATH\r\n\r\nif which swiftlint >\/dev\/null; then\r\n  cd ${PROJECT_DIR}\r\n  swiftlint --config .swiftlint.yml\r\nelse\r\n  echo \"warning: SwiftLint not installed, download from https:\/\/github.com\/realm\/SwiftLint\"\r\nfi\r\n"
+                }
+            ]
+        }
+    }
 }

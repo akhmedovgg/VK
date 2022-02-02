@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol VKMAuthDisplayLogic: AnyObject {
+    func authorizationCompleted(model: VKMAuthModels.LaunchLoginScreen.ViewModel.Account)
     func displayErrorModal(model: VKMAuthModels.LaunchLoginScreen.ViewModel.ErrorModal)
 }
 
@@ -54,6 +55,14 @@ class VKMAuthViewController: VKViewController<VKMAuthView>, VKMAuthDisplayLogic 
     }
     
     // MARK: - VKMAuthDisplayLogic
+    
+    func authorizationCompleted(model: VKMAuthModels.LaunchLoginScreen.ViewModel.Account) {
+//        guard let coordinator = coordinator else {
+//            return
+//        }
+        
+        print(#function)
+    }
     
     func displayErrorModal(model: VKMAuthModels.LaunchLoginScreen.ViewModel.ErrorModal) {
         let alertVC = VKAlertViewController(title: model.title, message: model.description, axis: .vertical, actions: [

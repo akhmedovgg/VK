@@ -29,11 +29,12 @@ class VKMAuthInteractor: VKMAuthBusinessLogic {
             
             switch result {
             case .success:
-                return
+                let response = VKMAuthModels.LaunchLoginScreen.Response(success: true, errorMessage: nil)
+                presenter.authorizationCompleted(response: response)
             case .failure(let error):
                 switch error {
                 case .unknownError(let errorMessage):
-                    let response = VKMAuthModels.LaunchLoginScreen.Response(errorMessage: errorMessage)
+                    let response = VKMAuthModels.LaunchLoginScreen.Response(success: false, errorMessage: errorMessage)
                     presenter.presentErrorModal(response: response)
                 }
             case .cancelled:

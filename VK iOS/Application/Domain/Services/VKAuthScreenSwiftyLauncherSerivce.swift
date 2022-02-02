@@ -13,6 +13,8 @@ class VKAuthScreenSwiftyLauncherSerivce: VKAuthScreenLauncherService {
     // MARK: - VKAuthScreenLauncherService
     
     func launch(completionHandler: @escaping VKAuthScreenLauncherCompletionHandler) {
+        VK.sessions.default.logOut()
+        
         VK.sessions.default.logIn { _ in
             DispatchQueue.main.async {
                 completionHandler(.success)

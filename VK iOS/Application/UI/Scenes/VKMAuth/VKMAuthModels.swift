@@ -14,10 +14,14 @@ enum VKMAuthModels {
         }
         
         struct Response {
-            var errorMessage: String
+            var success: Bool
+            var errorMessage: String?
         }
         
         struct ViewModel {
+            struct Account {
+            }
+            
             struct ErrorModal {
                 var title: String
                 var description: String

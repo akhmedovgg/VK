@@ -19,13 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let storyboard = UIStoryboard(name: "Alpha", bundle: nil)
 //        let viewController = storyboard.instantiateInitialViewController()
         
-        coordinator = VKMAuthCoordinator(navigationController: UINavigationController())
-        coordinator.start()
+//        coordinator = VKMAuthCoordinator(navigationController: UINavigationController())
+//        coordinator.start()
+        //        let viewController = coordinator.navigationController
+
+//        VK.setUp(appId: VKCredentials.sharedInstance.appID, delegate: self)
         
-        VK.setUp(appId: VKCredentials.sharedInstance.appID, delegate: self)
+        let controller = VKTabBarController(appearance: VKTabBarAppearancePrimary())
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window!.rootViewController = coordinator.navigationController
+        self.window!.rootViewController = controller
         self.window!.makeKeyAndVisible()
         
         return true

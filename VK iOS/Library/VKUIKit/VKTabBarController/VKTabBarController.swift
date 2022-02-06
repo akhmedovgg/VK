@@ -16,6 +16,7 @@ class VKTabBarController: VKViewController<VKTabBarView> {
     
     required init(appearance: VKTabBarAppearance, nibName nibNameOrNil: String? = nil, bundle nibBundleOrNil: Bundle? = nil) {
         self.appearance = appearance
+        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -31,6 +32,12 @@ class VKTabBarController: VKViewController<VKTabBarView> {
         setViewController(MessagesViewController())
         setViewController(ClipsViewController())
         setViewController(FriendsViewController())
+    }
+    
+    @available(iOS 11, *)
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        rootView.setupSafeAreaInsets()
     }
     
     func setViewController(_ vkTabBarItem: VKTabBarItem) {
@@ -54,6 +61,5 @@ class VKTabBarController: VKViewController<VKTabBarView> {
         activeTabBarControl = sender
         activeTabBarControl!.isPresented = true
         rootView.setContentView(activeTabBarControl!.vkTabBarItem.view)
-        print("presented", activeTabBarControl!.isPresented, activeTabBarControl?.vkTabBarItem.vkTabBarTitle)
     }
 }

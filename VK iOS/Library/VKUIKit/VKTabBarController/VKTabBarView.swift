@@ -55,6 +55,18 @@ class VKTabBarView: VKView {
         }
     }
     
+    func setupSafeAreaInsets() {
+        
+        tabBarContainer.snp.updateConstraints { make in
+            var height: CGFloat = 49
+            if #available(iOS 11, *) {
+                height += safeAreaInsets.bottom
+            }
+            
+            make.height.equalTo(height)
+        }
+    }
+    
     func setContentView(_ view: UIView) {
         for subView in contentView.subviews {
             subView.removeFromSuperview()

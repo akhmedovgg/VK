@@ -33,12 +33,8 @@ class VKTabBarItemControl: UIControl {
     override var isHighlighted: Bool {
         didSet {
             if isHighlighted {
-                guard animated == false else {
-                    return
-                }
-                
                 UIView.animate(withDuration: 0.072, delay: 0, options: .transitionCrossDissolve) { [weak self] in
-                    guard let weakSelf = self else {
+                    guard let weakSelf = self, !weakSelf.animated else {
                         return
                     }
                     
@@ -51,14 +47,14 @@ class VKTabBarItemControl: UIControl {
                     }
                     
                     weakSelf.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+                } completion: { [weak self] _ in
+                    guard let weakSelf = self else {
+                        return
+                    }
                     
                     weakSelf.animated = true
                 }
             } else {
-                guard animated == true else {
-                    return
-                }
-                
                 UIView.animate(withDuration: 0.072, delay: 0, options: .transitionCrossDissolve) { [weak self] in
                     guard let weakSelf = self else {
                         return
@@ -71,10 +67,14 @@ class VKTabBarItemControl: UIControl {
                     weakSelf.textImageView.tintColor = textColor
                     
                     weakSelf.transform = CGAffineTransform(scaleX: 1, y: 1)
+                } completion: { [weak self] _ in
+                    guard let weakSelf = self else {
+                        return
+                    }
                     
                     weakSelf.animated = false
-                } completion: { [weak self] _ in
-                    self!.isPresented = self!.isPresented
+                    
+                    weakSelf.isPresented = self!.isPresented
                 }
             }
         }

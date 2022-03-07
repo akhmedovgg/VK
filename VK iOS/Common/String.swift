@@ -2,20 +2,13 @@
 //  String.swift
 //  VK iOS
 //
-//  Created by Sherzod Akhmedov on 01/02/22.
+//  Created by Sherzod Akhmedov on 23/02/22.
 //
 
 import Foundation
 
 extension String {
-    func localized() -> Self {
-        let language = VKLanguageManager.sharedInstance.getLanguage()
-    
-        let path = Bundle.main.path(forResource: language.code, ofType: "lproj")
-        if let path = path, let bundle = Bundle(path: path) {
-            return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
-        }
-
-        return NSLocalizedString(self, comment: "")
+    func localized(tableName: String = "Localizable", bundle: Bundle = .main) -> String {
+        return NSLocalizedString(self, tableName: tableName, bundle: bundle, value: self, comment: "")
     }
 }
